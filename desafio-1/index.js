@@ -24,7 +24,7 @@ class ProductManager {
       id: this.getId(),
     };
 
-    if (repeatedCode === true) {
+    if (repeatedCode) {
       console.log("[ERROR] el codigo esta repetido");
     } else {
       this.products.push(newProduct);
@@ -58,14 +58,23 @@ productManager.addProduct(
 );
 
 productManager.addProduct(
+  "Adidas Short",
+  "Running Clothes",
+  3999,
+  "https://drive.google.com/file/d/1zOFqRA1xoo80H2H1-v-PSE4EITxc3Iwf/view?usp=share_link",
+  "LXMFD2",
+  10
+);
+
+productManager.addProduct(
   "Nike T-Shirt",
   "Running Clothes",
   6999,
   "https://drive.google.com/file/d/1zOFqRA1xoo80H2H1-v-PSE4EITxc3Iwf/view?usp=share_link",
-  "KM5WPDF2",
+  "KM5WP2",
   10
 );
 
 console.log(productManager.getProducts());
 console.log(productManager.getId());
-console.log(productManager.getProductsById(2));
+console.log(productManager.getProductsById(3));

@@ -1,0 +1,1 @@
+[{"title":"Salomon shoe","description":"Outdoor shoes","price":42399,"thumbnail":"img-1","code":"HSK27X","stock":6,"id":1},{"title":"Nike t-shirt","description":"Running clothes","price":9899,"thumbnail":"img-2","code":"HSKXCX","stock":12,"id":2},{"title":"Puma shoe","description":"Running shoes","price":47999,"thumbnail":"img-3","code":"DSJF2B","stock":8,"id":3}]
