@@ -25,5 +25,68 @@
     "code": "DSJF2B",
     "stock": 8,
     "id": 3
+  },
+  {
+    "title": "Garmin watch",
+    "description": "Running watches",
+    "price": 129999,
+    "thumbnail": "img-4",
+    "code": "YIMC92",
+    "stock": 30,
+    "id": 4
+  },
+  {
+    "title": "Puma shoe",
+    "description": "Running shoes",
+    "price": 37999,
+    "thumbnail": "img-5",
+    "code": "CVN3K9",
+    "stock": 3,
+    "id": 5
+  },
+  {
+    "title": "Lotto short",
+    "description": "Running shorts",
+    "price": 11999,
+    "thumbnail": "img-6",
+    "code": "WUXN75",
+    "stock": 20,
+    "id": 6
+  },
+  {
+    "title": "Nike socks",
+    "description": "Running socks",
+    "price": 8999,
+    "thumbnail": "img-7",
+    "code": "NCM21X",
+    "stock": 5,
+    "id": 7
+  },
+  {
+    "title": "Puma pants",
+    "description": "Running pants",
+    "price": 29999,
+    "thumbnail": "img-8",
+    "code": "HSN81B",
+    "stock": 11,
+    "id": 8
+  },
+  {
+    "title": "Adidas jacket",
+    "description": "Running jackets",
+    "price": 45999,
+    "thumbnail": "img-9",
+    "code": "B0ZXLS",
+    "stock": 5,
+    "id": 9
+  },
+  {
+    "title": "Asics short",
+    "description": "Running shorts",
+    "price": 14999,
+    "thumbnail": "img-10",
+    "code": "KLO19X",
+    "stock": 7,
+    "id": 10
   }
 ]

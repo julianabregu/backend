@@ -37,15 +37,16 @@ class ProductManager {
 
   getProducts = async () => {
     let content = await this.readProducts();
-    console.log(content);
+    return content;
   };
 
-  getProductById = async (id) => {
+  getProductById = async (pid) => {
     let content = await this.readProducts();
-    if (!content.find((product) => product.id === id)) {
-      console.log("[ERROR] Id not found");
+    let getById = content.find((prod) => prod.id === pid);
+    if (getById) {
+      return getById;
     } else {
-      console.log(content.find((product) => product.id === id));
+      return null;
     }
   };
 
