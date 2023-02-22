@@ -1,11 +1,23 @@
 const socket = io();
 
-socket.emit("mensaje", [{ user: "Fran", mensaje: "Hola" }]);
+const div = document.getElementById("products");
 
-socket.on("mensaje-general", (info) => {
-  console.log(info);
-});
+socket.on("products", (data) => {
+  div.innerHTML = "";
+  data.forEach((product) => {
+    const productList = document.createElement("ul");
+    productList.innerHTML = `
+    <li>${product.title}</li>
+    <li>${product.description}</li>
+    <li>${product.code}</li>
+    <li>${product.price}</li>
+    <li>${product.status}</li>
+    <li>${product.stock}</li>
+    <li>${product.category}</li>
+    <li>${product.thumbnails}</li>
+    <li>${product.id}</li>
+    `;
 
-socket.on("mensaje-socket-propio", (info) => {
-  console.log(info);
+    div.appendChild(productList);
+  });
 });

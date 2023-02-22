@@ -1,17 +1,16 @@
-<h1>Hola {{usuario.nombre}}</h1>
-{{>count/contador}}
-
-{{#if isTutor}}
-    {{#each cursos}}
-        <div>
-            <ul>
-                <li>{{this.numero}}</li>
-                <li>{{this.dia}}</li>
-                <li>{{this.horario}}</li>
-            </ul>
-        </div>
-    {{/each}}
-{{else }}    
-    <p>No sos tutor</p>
-{{/if}}
-
+<h1>Lista de productos handlebars</h1>
+<div>
+  {{#each products}}
+    <ul>
+      <li>{{this.title}}</li>
+      <li>{{this.description}}</li>
+      <li>{{this.code}}</li>
+      <li>{{this.price}}</li>
+      <li>{{this.status}}</li>
+      <li>{{this.stock}}</li>
+      <li>{{this.category}}</li>
+      <li>{{this.thumbnails}}</li>
+      <li>{{this.id}}</li>
+    </ul>
+  {{/each}}
+</div>
