@@ -1,13 +1,13 @@
 import { Router } from "express";
-import products from "../models/products.json" assert { type: "json" };
+import ProductManager from "../controllers/productManager.js";
+
+const productManager = new ProductManager("src/models/products.json");
 
 const routerHome = Router();
 
-routerHome.get("/", (req, res) => {
-  res.render("home", {
-    title: "products",
-    products,
-  });
+routerHome.get("/", async (req, res) => {
+  const products = await productManager.getProducts();
+  res.render("home", { products });
 });
 
 export default routerHome;

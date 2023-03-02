@@ -1,16 +1,33 @@
-<h1>Lista de productos handlebars</h1>
-<div>
-  {{#each products}}
-    <ul>
-      <li>{{this.title}}</li>
-      <li>{{this.description}}</li>
-      <li>{{this.code}}</li>
-      <li>{{this.price}}</li>
-      <li>{{this.status}}</li>
-      <li>{{this.stock}}</li>
-      <li>{{this.category}}</li>
-      <li>{{this.thumbnails}}</li>
-      <li>{{this.id}}</li>
-    </ul>
-  {{/each}}
+<div class="container">
+  <h1 class="text-center">Lista de productos ingresados</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Codigo</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each products}}
+        <tr>
+          <th scope="row">{{id}}</th>
+          <td>{{title}}</td>
+          <td>{{description}}</td>
+          <td>{{code}}</td>
+          <td>{{price}}</td>
+          <td>{{status}}</td>
+          <td>{{stock}}</td>
+          <td>{{category}}</td>
+          <td>{{thumbnails}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
 </div>

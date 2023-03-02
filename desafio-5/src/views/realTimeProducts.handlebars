@@ -1,2 +1,114 @@
-<h1>Lista de productos websockets</h1>
-<div id="products"></div>
+<div class="container">
+  <h1 class="text-center">Lista de productos en tiempo real</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Codigo</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Imagen</th>
+      </tr>
+    </thead>
+    <tbody id="productsTable"></tbody>
+  </table>
+  <h1 class="text-center">Agregar un producto</h1>
+  <form id="formCreateProduct">
+    <div class="mb-3">
+      <label for="title" class="form-label">Titulo</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        placeholder="Ingresa el titulo del producto"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Descripcion</label>
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        placeholder="Ingresa la descripcion del producto"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="code" class="form-label">Codigo</label>
+      <input
+        type="text"
+        class="form-control"
+        id="code"
+        placeholder="Ingresa el codigo del producto"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Precio</label>
+      <input
+        type="number"
+        class="form-control"
+        id="price"
+        placeholder="Ingresa el precio del producto"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="status" class="form-label">Estado</label>
+      <select id="status" class="form-select">
+        <option selected>true</option>
+        <option>false</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="stock" class="form-label">Stock</label>
+      <input
+        type="number"
+        class="form-control"
+        id="stock"
+        placeholder="Ingresa el stock del producto"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="category" class="form-label">Categoria</label>
+      <input
+        type="text"
+        class="form-control"
+        id="category"
+        placeholder="Ingresa la categoria del producto"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="thumbnails" class="form-label">Imagen</label>
+      <input
+        type="text"
+        class="form-control"
+        id="thumbnails"
+        placeholder="Ingresa la imagen del producto"
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      value="agregar"
+    >Agregar</button>
+  </form>
+  <h1 class="text-center">Eliminar un producto</h1>
+  <form id="formDeleteProduct">
+    <div class="mb-3">
+      <label for="id" class="form-label">ID</label>
+      <input
+        type="number"
+        class="form-control"
+        id="idProduct"
+        placeholder="Ingresa el id del producto"
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-danger"
+      value="eliminar"
+    >Eliminar</button>
+  </form>
+</div>

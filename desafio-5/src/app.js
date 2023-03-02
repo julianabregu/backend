@@ -8,7 +8,9 @@ import * as path from "path";
 import { Server } from "socket.io";
 import routerHome from "./routes/home.routes.js";
 import routerRealTimeProducts from "./routes/realTimeProducts.routes.js";
-import products from "./models/products.json" assert { type: "json" };
+import ProductManager from "./controllers/productManager.js";
+
+const productManager = new ProductManager("src/models/products.json");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -50,7 +52,19 @@ app.post("/upload", upload.single("product"), (req, res) => {
   res.send("Image uploaded");
 });
 
-io.on("connection", (socket) => {
+io.on("connection", async (socket) => {
   console.log("Cliente conectado");
-  socket.emit("products", products);
+
+  const products = await productManager.getProducts();
+  socket.emit("messageGetProducts:", products);
+
+  socket.on("messageNewProduct:", async (data) => {
+    const newProduct = data;
+    await productManager.addProduct(newProduct);
+  });
+
+  socket.on("messageDeleteProduct:", async (data) => {
+    const idProduct = data;
+    await productManager.deleteProductById(idProduct);
+  });
 });

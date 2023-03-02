@@ -4,31 +4,24 @@ class ProductManager {
   constructor(path) {
     this.path = path;
     this.products = [];
-    this.id = 0;
   }
 
-  static addId() {
-    if (this.idIncrement) {
-      this.idIncrement++;
-    } else {
-      this.idIncrement = 1;
+  async addProduct(product) {
+    try {
+      let content = await fs.readFile(this.path, "utf-8");
+      content = JSON.parse(content);
+      if (content.length === 0) {
+        product.id = 1;
+      } else {
+        const newId = content[content.length - 1].id + 1;
+        product.id = newId;
+      }
+      content.push(product);
+      await fs.writeFile(this.path, JSON.stringify(content));
+    } catch (error) {
+      console.log(error);
     }
-    return this.idIncrement;
   }
-
-  addProduct = async (title, description, price, thumbnail, code, stock) => {
-    let newProduct = {
-      title,
-      description,
-      price,
-      thumbnail,
-      code,
-      stock,
-      id: ProductManager.addId(),
-    };
-    this.products.push(newProduct);
-    await fs.writeFile(this.path, JSON.stringify(this.products));
-  };
 
   readProducts = async () => {
     let content = await fs.readFile(this.path, "utf-8");
